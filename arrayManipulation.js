@@ -8,6 +8,21 @@ function processArray(numbers) {
     });
 }
 
+function formatArrayStrings(strings, processedNumbers) {
+    return strings.map((str, index) => {
+        if (processedNumbers[index] % 2 === 0) {
+            return str.toUpperCase();
+        } else {
+            return str.toLowerCase();
+        }
+    });
+}
+
 // Example usage
-const exampleArray = [1, 2, 3, 4, 5];
-console.log(processArray(exampleArray));
+const numbers = [10, 21, 35, 46, 59];
+const processedNumbers = processArray(numbers); // [3, 4, 9, 16, 15]
+const strings = ["hello", "world", "this", "is", "test"];
+const formattedStrings = formatArrayStrings(strings, processedNumbers);
+
+console.log(processedNumbers); // Output: [3, 4, 9, 16, 15]
+console.log(formattedStrings); 
